@@ -9,3 +9,25 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* анимация увелечения сердца после нажатия на него и после заливки всего сердца  */
+@keyframes heart-scale {
+  from {
+    transform-origin: center;
+  }
+
+  to {
+    scale: 1.25;
+  }
+}
+
+/* анимация появления искр */
+@keyframes heart-sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
