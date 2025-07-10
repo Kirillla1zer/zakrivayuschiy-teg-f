@@ -16,13 +16,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: var(--main_font);
+  font-family: var(--main__font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--main_font_weight_text);
-}
-
-.content {
+  font-variation-settings: "wght" var(--main__font__weight__text);
 }
 
 .header {
@@ -37,28 +34,36 @@
     clamp(1rem, -1.3438rem + 10vw, 7.65625rem);
   text-align: center;
   background-color: rgba(255, 255, 255, 1);
-  inline-size: var(--inline-size-block);
+  inline-size: var(--inline__size__block);
 }
+
+ .content {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 100px;
+} 
 
 .header__title {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-family: var(--accent_font);
+  font-family: var(--accent__font);
   font-weight: 400;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
-.header__title_description {
+.header__title__description {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-.background_gradient_fixed {
+.background__gradient__fixed {
   position: fixed;
   z-index: -1;
-  background-image: var(--background_gradient);
+  background-image: var(--background__gradient);
   background-size: cover;
   inset-inline-start: 0;
   inset-block-start: 0;
@@ -71,15 +76,13 @@
   flex-direction: column;
   margin-block-end: 50px;
   border: 2px #000 solid;
-  font-family: var(--main_font);
-  font-weight: var(--main_font_weight_text);
+  font-family: var(--main__font);
+  font-weight: var(--main__font__weight__text);
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 0;
   background-color: rgba(255, 255, 255, 1);
-  /* margin-inline-end:clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem);
-  margin-inline-start:clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem); */
-  inline-size: var(--inline-size-block);
+  inline-size: var(--inline__size__block);
 }
 
 .post__title {
@@ -87,11 +90,9 @@
   padding-inline-end: 10px;
   padding-block-start: 4px;
   padding-block-end: 4px;
-  color: rgba(0, 0, 0, 1);
   font-size: 18px;
   line-height: 115%;
-  letter-spacing: 0;
-  font-variation-settings: "wght" var(--main_font_weight_title);
+  font-variation-settings: "wght" var(--main__font__weight__title);
 }
 
 .post__content {
@@ -110,117 +111,131 @@
   gap: 5px;
 }
 
-.post__image-wrapper {
+.post__image__wrapper {
   position: relative;
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
+  border-block-start: 2px solid var(--accent__color);
+  border-block-end: 2px solid var(--accent__color);
+  block-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
 }
 
 .post__image {
-  display: block;
-  border-block-start: 2px rgba(0, 0, 0, 1) solid;
-  border-block-end: 2px rgba(0, 0, 0, 1) solid;
   object-fit: cover;
-  inline-size: calc(100%);
+  object-position:center ;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .post__label {
   position: absolute;
-  font-family: var(--accent_font);
+  font-family: var(--accent__font);
   font-size: 14px;
   line-height: 100%;
   letter-spacing: 0;
   text-transform: uppercase;
-  text-shadow: 0px 2px var(--color-stroke), 0px -2px var(--color-stroke),
-    2px 0px var(--color-stroke), -2px 0px var(--color-stroke);
+  text-shadow: 0px 2px var(--color__stroke), 0px -2px var(--color__stroke),
+    2px 0px var(--color__stroke), -2px 0px var(--color__stroke);
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
 }
+
 /* Фильтры на восемь изображений */
-.post__image_filter_freetrack {
+.post__image__filter__invert {
   filter: invert(0.7);
 }
 
-.post__image__filter__1sprint__start {
+.post__image__filter__saturate {
   filter: saturate(80%);
 }
 
-.post__image_filter_1sprint_end {
+.post__image__filter__sepia {
   filter: sepia(1240%);
 }
 
-.post_label_filter_2sprint_start {
+.post__label__filter__blur {
   filter: blur(2px);
 }
 
-.post__image_filter_2sprint_end {
+.post__image__filters__brightness__dropshadow {
   filter: brightness(70%) drop-shadow(2px 2px 10px red);
 }
 
-.post__image_filter_3sprint_start {
+.post__image__filter__contrast {
   filter: contrast(250%);
 }
 
-.post__image_filter_3sprint_end {
+.post__image__filter__opacity{
   filter: opacity(60%);
 }
 
-.post__image_filter_4sprint_start {
+.post__image__filter__hue_rotate {
   filter: hue-rotate(120deg);
 }
 
-@supports (text-stroke: 2px var(--color-stroke)) or
-  (-webkit-text-stroke: 2px var(--color-stroke)) {
+@supports (text-stroke: 2px var(--color__stroke)) or
+  (-webkit-text-stroke: 2px var(--color__stroke)) {
   .post__label {
     text-shadow: none;
-    -webkit-text-stroke: 2px var(--color-stroke);
-    text-stroke: 2px var(--color-stroke);
+    -webkit-text-stroke: 2px var(--color__stroke);
+    text-stroke: 2px var(--color__stroke);
   }
 }
 
-.card__icon-button:focus {
+.card__icon__button:focus {
+  border: 2px solid transparent;
   outline: none;
+  box-shadow: none;
 }
 
-.card__icon-button:focus-visible {
-  border: 2px solid var(--accent-color);
-}
 
 .button {
   position: relative;
   border: 2px rgba(0, 0, 0, 1) solid;
   overflow: hidden;
-  font-family: var(--accent_font);
+  font-family: var(--accent__font);
   font-size: 14px;
   background-color: transparent;
-}
-
-.card__like-button {
-  border: 2px rgba(0, 0, 0, 1) solid;
-  line-height: 90%;
-  letter-spacing: 0;
+  cursor:pointer;
   transition: box-shadow 0.3s ease;
-  transition: transform 0.5s ease-in-out;
-  inline-size: 129px;
-  block-size: 40px;
 }
 
-.footer__button {
+.button:not(.card__icon-button)::after {
+  content: " ";
+  position: absolute;
+  inset: 0 0;
+  background-color: var(--accent__color);
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.button:hover::after {
+  content: " ";
+  background-color: var(--accent__color);
+  transition: transform 0.5s ease-in-out;
+  transform: translate(0);
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--accent__color);
+  outline: none;
+  transition: transition 0.3s ease;
+}
+
+.save__button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 17px 20px;
+  padding: 15px 18px;
   background-color: white;
-  transition: box-shadow 0.3s ease;
 }
 
 .dialog__button {
-  padding: 12.5px clamp(7.28125rem, 6.9291rem + 1.5023vw, 8.28125rem);
-  transition: box-shadow 0.3s ease;
+  padding: 10px clamp(7.15625rem, 6.8041rem + 1.5023vw, 8.15625rem);
   inline-size: 100%;
 }
 
@@ -228,80 +243,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
   border: 2px solid transparent;
   padding: 0px;
-  block-size: 100%;
+  block-size: 38px;
+  transition: border 0.3s ease;
 }
 
-.card__like-button .button__text {
-  position: relative;
-  z-index: 1;
-  color: white;
-  mix-blend-mode: difference;
+.card__like-button {
+  border: 2px rgba(0, 0, 0, 1) solid;
+  line-height: 90%;
+  letter-spacing: 0;
+  inline-size: 130px;
+  block-size: 38px;
+  padding:0px;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
-  outline: none;
-  transition: transition 0.3s ease;
+.card__icon-button.button:focus-visible {
+  box-shadow: none;
+  border: 2px solid var(--accent__color);
 }
 
-.card__like-button::after {
-  content: " ";
-  position: absolute;
-  inset: 0 0;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translate(-100%);
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.card__like-button:hover::after {
-  content: " ";
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translate(0);
-}
-
-.footer {
-  margin-block-end: 100px;
-  font-family: var(--accent_font);
-  /* margin-inline-start: clamp(2.15625rem, -1.1008rem + 13.8967vw, 11.40625rem);
-  margin-inline-end:  clamp(2.15625rem, -1.1008rem + 13.8967vw, 11.40625rem); */
-}
-
-.footer__button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
-  outline: none;
-  transition: transition 0.3s ease;
-}
-
-.footer__button::after {
-  content: " ";
-  position: absolute;
-  inset: 0 0;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translate(-100%);
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.footer__button:hover::after {
-  content: " ";
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translate(0);
-}
-
-.footer__button svg {
+.save__button .save__floppy {
   position: relative;
   z-index: 1;
   stroke: white;
   mix-blend-mode: difference;
-  inline-size: 28px;
+  inline-size: 21px;
 }
 
 .dialog {
@@ -309,15 +276,17 @@
   inset: 0;
   display: none;
   border: 2px transparent solid;
-}
-
-.dialog[open] {
-  display: flex;
   flex-direction: column;
   gap: 30px;
   margin-block-end: 240px;
   border: 2px black solid;
-  padding: 30px;
+  padding: 28px 28px;
+  inline-size:clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  max-inline-size:none;
+}
+
+.dialog[open] {
+  display: flex;
 }
 
 .dialog[open]::backdrop {
@@ -333,7 +302,7 @@
 }
 
 .dialog__title__text {
-  font-family: var(--accent_font);
+  font-family: var(--accent__font);
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -341,75 +310,36 @@
   text-transform: uppercase;
 }
 
-.dialog__title__text_nowrap {
+.dialog__title__text__nowrap {
   white-space: nowrap;
-}
-
-.dialog__button .button__text {
-  position: relative;
-  z-index: 1;
-  color: white;
-  mix-blend-mode: difference;
-}
-
-.dialog__button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
-  outline: none;
-  transition: transition 0.3s ease;
-}
-
-.dialog__button::after {
-  content: " ";
-  position: absolute;
-  inset: 0 0;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translate(-100%);
-}
-
-.dialog__button:hover::after {
-  content: " ";
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translate(0);
-}
-
-.footer__button:hover .button__text {
-  position: relative;
-  z-index: 1;
-  color: white;
-  mix-blend-mode: difference;
 }
 
 .button__text {
   position: relative;
-  font-family: var(--accent_font);
-  font-weight: 400;
-  font-size: 14px;
+  z-index:1;
+  color: white;
+  mix-blend-mode: difference;
   line-height: 90%;
   letter-spacing: 0;
   white-space: nowrap;
 }
 
-.button_text {
-  color: rgba(0, 0, 0, 1);
-  font-family: var(--accent_font);
-  font-size: 14px;
-  line-height: 90%;
-  letter-spacing: 0;
-  white-space: nowrap; /* Иначе был перенос на новую строку */
+.dialog .button__text {
+  text-transform: uppercase;
 }
 
 .sparks {
   opacity: 0;
 }
 
-.main-body {
+.main__body {
   transition: fill 0.3s linear;
+  transition-delay: 0s;
 }
 
 .contour {
   transition: fill 0.1s linear;
+  transition-delay: 0s;
 }
 
 .core {
@@ -418,61 +348,74 @@
   transition-delay: 0.03s;
 }
 
+.like-icon {
+  transform-origin: center;
+}
 /* Когда наводим на сердце(hover) */
 
 .like-icon:hover .core {
   opacity: 1;
-  fill: var(--accent-color);
+  fill: var(--accent__color);
   transition-delay: 0s;
-}
+} 
 
-.like-icon:hover .main-body {
+.like-icon:hover .main__body {
   opacity: 1;
-  fill: var(--accent-color);
+  fill: var(--accent__color);
   transition-delay: 0.05s;
 }
+
 /* Когда нажимаем на сердце(active) */
 .like-icon:active .core {
   opacity: 1;
-  fill: var(--animation-fill-color);
+  fill: var(--animation__fill__color);
   transition-delay: 0s;
 }
 
-.like-icon:active .main-body {
+.like-icon:active .main__body {
   opacity: 1;
-  fill: var(--animation-fill-color);
+  fill: var(--animation__fill__color);
   transition-delay: 0.05s;
 }
 
 .like-icon.is-liked {
-  animation: heart-scale 0.3s 0.1s ease-in;
+  animation: heartScaleFromCenter 0.3s ease-in;
+  animation-delay: 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-  animation: heart-sparks 0.3s 0.3s ease-in;
+  animation: fadeInHeartSparks 0.3s ease-in;
+  animation-delay: 0.3s;
 }
+
 /* при клике(закрашиваем сердце в красный + scale + искры */
 .like-icon.is-liked .core {
   opacity: 1;
-  fill: var(--animation-fill-color);
+  fill: var(--animation__fill__color);
+  /* transition-delay: 0s;  */
 }
 
-.like-icon.is-liked .main-body {
+.like-icon.is-liked .main__body {
   opacity: 1;
-  fill: var(--animation-fill-color);
+  fill: var(--animation__fill__color);
+  /* transition-delay: 0.05s; */
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
+  fill: var(--animation__fill__color);
   transition-delay: 0.06s;
 }
 
 @media (width <= 375px) {
-  .dialog[open] {
-    padding: 30px 40px;
+  .dialog {
+    padding: 28px 38px;
   }
-
-  .footer__button {
+  .save__button .save__floppy {
+    inline-size: 28px;
+    block-size:28px;
+  }
+  .save__button {
     flex-direction: column;
+    gap:9.5px;
   }
 }

@@ -11,9 +11,9 @@
 */
 
 /* анимация увелечения сердца после нажатия на него и после заливки всего сердца  */
-@keyframes heart-scale {
+@keyframes heartScaleFromCenter {
   from {
-    transform-origin: center;
+    
   }
 
   to {
@@ -22,7 +22,7 @@
 }
 
 /* анимация появления искр */
-@keyframes heart-sparks {
+@keyframes fadeInHeartSparks {
   from {
     opacity: 0;
   }
