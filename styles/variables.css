@@ -4,11 +4,9 @@
   --accent__font: "PressStart2P", monospace;
   --main__font__weight__title: 715;
   --main__font__weight__text: 410;
-  --background__gradient: repeating-linear-gradient(
-      to bottom,
+  --background__gradient: repeating-linear-gradient(to bottom,
       #d3d3d3 0px 2px,
-      transparent 2px 4px
-    ),
+      transparent 2px 4px),
     repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --inline__size__block: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
