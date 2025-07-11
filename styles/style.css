@@ -16,12 +16,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-block-start: 100px;
+  padding-block-end: 100px;
   font-family: var(--main__font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--main__font__weight__text);
-  padding-block-start: 100px;
-  padding-block-end: 100px;
 }
 
 .header {
@@ -191,19 +191,19 @@
 .button {
   position: relative;
   border: 2px rgba(0, 0, 0, 1) solid;
+  box-shadow: 2px 2px transparent;
   overflow: hidden;
   font-family: var(--accent__font);
   font-size: 14px;
   background-color: transparent;
-  box-shadow: 2px 2px transparent; 
   transition: box-shadow 0.3s ease;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .button:not(.card__icon-button)::after {
   content: " ";
   position: absolute;
-  inset: 0 0; 
+  inset: 0 0;
   background-color: var(--accent__color);
   transition: transform 0.5s ease-in-out;
   transform: translate(-100%);
@@ -257,9 +257,9 @@
 }
 
 .card__icon-button.button:focus-visible {
-  border: 2px solid var(--accent__color); 
-  transition: border 0.3s ease;
+  border: 2px solid var(--accent__color);
   box-shadow: none;
+  transition: border 0.3s ease;
 }
 
 .save__button .save__floppy {
@@ -276,18 +276,16 @@
   display: none;
   flex-direction: column;
   gap: 30px;
-  margin-block-end: 240px;
+  margin-block-end: clamp(15rem, 11.82rem + 13.5681vw, 24.03125rem);
   border: 2px black solid;
   padding: 28px 28px;
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   max-inline-size: none;
-  margin-block-end: clamp(15rem, 11.82rem + 13.5681vw, 24.03125rem);
 }
 
 .dialog[open] {
   display: flex;
 }
-
 
 .dialog[open]::backdrop {
   background-color: rgb(0 0 0 / 0.75);
@@ -392,13 +390,13 @@
 .like-icon.is-liked .core {
   opacity: 1;
   fill: var(--animation__fill__color);
-  transition-delay: 0s;  
+  transition-delay: 0s;
 }
 
 .like-icon.is-liked .main__body {
   opacity: 1;
   fill: var(--animation__fill__color);
-  transition-delay: 0.05s; 
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .contour {
